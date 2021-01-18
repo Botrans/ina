@@ -9,3 +9,6 @@ class Holotools(BaseModel):
     status: str
     start: Optional[str]
     link: Optional[str]
+
+    def __hash__(self) -> int:
+        return hash(self.link)

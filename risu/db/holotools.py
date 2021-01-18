@@ -15,3 +15,5 @@ async def get_live() -> List[Holotools]:
         start=j["live_start"],
         link=f"{yt}{j['yt_video_key']}"
     ) for j in json["live"]]
+
+
