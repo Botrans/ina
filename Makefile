@@ -5,7 +5,7 @@ pyrequirements:
 	cat requirements.txt | grep "#" | sed 's/# //g' | $(py) || $(pip) install -r requirements.txt
 
 test: pyrequirements
-	$(py) -m mypy risu
+	$(py) -m mypy risu --ignore-missing-imports
 	$(py) -m pytest .
 
 format: pyrequirements
