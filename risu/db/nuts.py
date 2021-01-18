@@ -11,6 +11,7 @@ class Nuts:
 
     Use asyncronously
     """
+
     refresh_min = 5
 
     def __init__(self):
@@ -39,10 +40,7 @@ class Nuts:
                 return TentacleStatus(status="stop")
             return TentacleStatus(status="continue")
         if self.tentacle_needed():
-            return TentacleStatus(
-                status="start",
-                stream=self.add_tentacle(tentacle)
-            )
+            return TentacleStatus(status="start", stream=self.add_tentacle(tentacle))
         return TentacleStatus(status="wait")
 
     async def refresh_live(self) -> None:
