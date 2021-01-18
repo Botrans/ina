@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 yt = "https://www.youtube.com/watch?v="
 
@@ -24,5 +24,5 @@ class Tentacle(BaseModel):
 
 
 class TentacleStatus(BaseModel):
-    status: str
+    status: str = Field(..., description="start|stop|wait|continue")
     stream: Optional[Holotools]

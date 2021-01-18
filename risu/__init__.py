@@ -7,7 +7,7 @@ app = FastAPI()
 nuts = Nuts()
 
 
-@app.post("/status")
+@app.post("/status", response_model=TentacleStatus)
 async def status(tentacle: Tentacle) -> TentacleStatus:
     await nuts.refresh_live()
     return nuts.tentacle_status(tentacle)
