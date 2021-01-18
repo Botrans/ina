@@ -5,9 +5,9 @@ pyrequirements:
 	cat requirements.txt | grep "#" | sed 's/# //g' | $(py) || $(pip) install -r requirements.txt
 
 test: pyrequirements
-	$(py) -m mypy ina
+	$(py) -m mypy risu
 	$(py) -m pytest .
 
 format: pyrequirements
-	$(py) -m black ina
-	$(py) -m isort ina
+	$(py) -m black risu
+	$(py) -m isort risu
