@@ -12,3 +12,16 @@ class Holotools(BaseModel):
 
     def __hash__(self) -> int:
         return hash(self.link)
+
+
+class Tentacle(BaseModel):
+    uid: str
+    start: Optional[str]
+
+    def __hash__(self) -> int:
+        return hash(self.uid)
+
+
+class TentacleStatus(BaseModel):
+    status: str
+    stream: Optional[Holotools]
